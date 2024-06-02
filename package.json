@@ -1,0 +1,19 @@
+{
+  "name": "library-management-system--backend-",
+  "version": "1.0.0",
+  "description": "Library Management SystemAPI\r Description\r The Library Management SystemAPI is a backendsystemdesignedtofacilitate\r the management of a library's resources and services through web-based\r applications. It provides a set of endpoints that allowusers to performvarious\r operations related to managing books, users, and borrowing/returning books.\r This project will allowyou to apply the skills you've learned throughout the\r bootcamptoadifferent domain.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "StarmannRassy & Dearie-de-Cybek",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.2"
+  }
+}
