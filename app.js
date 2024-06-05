@@ -1,14 +1,12 @@
-const path = require('path');
-const express = require('express');
-const morgan = require('morgan');
+// const path = require("path");
+const express = require("express");
+const morgan = require("morgan");
 
-const AppError = require('./utils/appError');
-const globalErrorHandler = require('./controllers/errorController');
+const AppError = require("./utils/appError");
+const globalErrorHandler = require("./controllers/errorController");
 
 // Start express app
 const app = express();
-
-
 
 // 1) GLOBAL MIDDLEWARES
 // Implement CORS
@@ -19,7 +17,6 @@ const app = express();
 //   origin: ''
 // }))
 
-
 // Serving static files
 // app.use(express.static(path.join(__dirname, 'public')));
 
@@ -27,17 +24,13 @@ const app = express();
 //TODO:Setup #1 Robust Security Measures
 
 // Development logging
-if (process.env.NODE_ENV === 'development') {
-  app.use(morgan('dev'));
+if (process.env.NODE_ENV === "development") {
+  app.use(morgan("dev"));
 }
 
 // Limit requests from same API
 
-
 // Stripe webhook.
-
-
-
 
 // Data sanitization against NoSQL query injection
 // app.use(mongoSanitize());
@@ -46,7 +39,6 @@ if (process.env.NODE_ENV === 'development') {
 // app.use(xss());
 
 // Prevent parameter pollution
-
 
 // Test middleware
 app.use((req, res, next) => {
@@ -57,7 +49,7 @@ app.use((req, res, next) => {
 
 // 3) ROUTES
 
-app.all('*', (req, res, next) => {
+app.all("*", (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
 });
 

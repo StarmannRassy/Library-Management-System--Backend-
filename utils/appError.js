@@ -1,13 +1,14 @@
 class AppError extends Error {
-    constructor(message, statusCode) {
-        super(message);
+  constructor(message, statusCode) {
+    super(message);
 
-        this.statusCode = statusCode;
-        this.status = `${statusCode}`.startsWith('4') ? 'fail' : 'error';
-        this.isOperational = true;
+    this.statusCode = statusCode;
+    this.status = `${statusCode}`.startsWith("4") ? "fail" : "error";
+    this.isOperational = true;
 
-        Error.captureStackTrace(this, this.constructor);
-    }
+    Error.captureStackTrace(this, this.constructor);
+  }
 }
 
+// eslint-disable-next-line node/no-unsupported-features/es-syntax
 export default AppError;
