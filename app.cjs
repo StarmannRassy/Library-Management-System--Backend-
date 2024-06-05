@@ -2,8 +2,8 @@
 const express = require("express");
 const morgan = require("morgan");
 
-const AppError = require("./utils/appError");
-const globalErrorHandler = require("./controllers/errorController");
+const AppError = require("./utils/appError.cjs");
+const globalErrorHandler = require("./controllers/errorController.cjs");
 
 // Start express app
 const app = express();
@@ -24,9 +24,9 @@ const app = express();
 //TODO:Setup #1 Robust Security Measures
 
 // Development logging
-if (process.env.NODE_ENV === "development") {
-  app.use(morgan("dev"));
-}
+// if (process.env.NODE_ENV === "development") {
+//   app.use(morgan("dev"));
+// }
 
 // Limit requests from same API
 
@@ -41,11 +41,11 @@ if (process.env.NODE_ENV === "development") {
 // Prevent parameter pollution
 
 // Test middleware
-app.use((req, res, next) => {
-  req.requestTime = new Date().toISOString();
-  // console.log(req.cookies);
-  next();
-});
+// app.use((req, res, next) => {
+//   req.requestTime = new Date().toISOString();
+//    console.log(req.cookies);
+//   next();
+// });
 
 // 3) ROUTES
 
@@ -53,6 +53,6 @@ app.all("*", (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
 });
 
-app.use(globalErrorHandler);
+// app.use(globalErrorHandler);
 
 module.exports = app;

@@ -2,7 +2,8 @@
   "name": "library-management-system--backend-",
   "version": "1.0.0",
   "description": "Library Management SystemAPI\r Description\r The Library Management SystemAPI is a backendsystemdesignedtofacilitate\r the management of a library's resources and services through web-based\r applications. It provides a set of endpoints that allowusers to performvarious\r operations related to managing books, users, and borrowing/returning books.\r This project will allowyou to apply the skills you've learned throughout the\r bootcamptoadifferent domain.",
-  "main": "index.js",
+  "main": "app.cjs",
+  "type": "module",
   "scripts": {
     "start": "nodemon server.js"
   },

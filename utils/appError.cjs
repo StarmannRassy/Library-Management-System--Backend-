@@ -11,4 +11,4 @@ class AppError extends Error {
 }
 
 // eslint-disable-next-line node/no-unsupported-features/es-syntax
-export default AppError;
+module.exports = AppError;

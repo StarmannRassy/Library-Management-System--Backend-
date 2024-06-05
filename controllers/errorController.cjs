@@ -1,6 +1,6 @@
 /* eslint-disable node/no-unsupported-features/es-syntax */
 // eslint-disable-next-line import/no-useless-path-segments
-import AppError from "./../utils/appError";
+const AppError = require("../utils/appError.cjs");
 
 //TODO: #2 Complete error logging
 
@@ -29,3 +29,5 @@ const sendErrorDev = (err, req, res) => {
     msg: err.message
   });
 };
+
+
