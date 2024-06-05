@@ -72,4 +72,102 @@ Acceptance Criteria:
     Have fun building your Library Management SystemAPI and best of luck
     withyour project defense!
 
-Installation Procedures...
+# Installation Procedures...
+# Library Management System - Backend
+
+## Getting Started
+
+Welcome to the Library Management System backend project! Follow the steps below to set up and run the project in your local development environment.
+
+### Prerequisites
+
+Ensure you have the following installed on your machine:
+
+- [Node.js](https://nodejs.org/) (v14 or later)
+- [MongoDB](https://www.mongodb.com/) (local instance or connection to a cloud database)
+- [Git](https://git-scm.com/) (optional, for version control)
+
+### Installation
+
+1. **Clone the repository**:
+
+    ```bash
+    git clone https://github.com/StarmannRassy/Library-Management-System--Backend-.git
+    cd library-management-system-backend
+    ```
+
+2. **Install dependencies**:
+
+    ```bash
+    npm install
+    ```
+
+3. **Set up environment variables**:
+
+    Create a `.env` file in the root of the project and add the following variables:
+
+    ```env
+    NODE_ENV=development
+    PORT=8000
+    DATABASE=mongodb+srv://<username>:<password>@cluster0.mongodb.net/library?retryWrites=true&w=majority
+    DATABASE_LOCAL=mongodb://localhost:27017/LibraryManagement
+    DATABASE_PASSWORD=yourpassword
+    JWT_SECRET=yourjwtsecret
+    JWT_EXPIRES_IN=90d
+    ```
+
+    Replace `<username>`, `<password>`, and other placeholders with your actual values.
+
+4. **Run the MongoDB server** (if using a local instance):
+
+    Open a new terminal window and run:
+    ## Starting MongoDB Server
+
+Before running the MongoDB server (`mongod`), ensure that the MongoDB binaries are in your system's PATH environment variable. If you haven't added MongoDB to your PATH, you'll need to navigate to the MongoDB installation directory in the terminal.
+
+### Navigate to MongoDB Installation Directory
+
+Use the `cd` command to navigate to the directory where MongoDB is installed. This might vary depending on your operating system and installation method. For example, on Windows, the default installation directory might be `C:\Program Files\MongoDB\Server\{version}\bin`.
+
+```bash
+cd C:\Program Files\MongoDB\Server\{version}\bin
+
+
+    ```bash
+    mongod
+    ```
+
+## CommonJS (CJS) Module System
+
+This project uses the CommonJS (CJS) module system, which is the default module system for Node.js. Below is a brief explanation of CommonJS and how it differs from ES Modules (ESM).
+
+### Key Features of CommonJS
+
+1. **`require` function**:
+   - Used to import modules.
+   - Syntax: `const module = require('module');`
+
+2. **`module.exports` and `exports`**:
+   - Used to export modules.
+   - You can export a single item (object, function, etc.) using `module.exports`.
+   - You can also use `exports` as an alias for `module.exports`.
+
+### Example
+
+#### Creating a Module
+
+**utils/math.js**:
+```javascript
+function add(a, b) {
+  return a + b;
+}
+
+function subtract(a, b) {
+  return a - b;
+}
+
+module.exports = {
+  add,
+  subtract
+};
+
